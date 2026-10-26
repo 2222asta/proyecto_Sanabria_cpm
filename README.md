@@ -1,4 +1,4 @@
- Integrante 1: Actividad.java
+ Integrante 1 Mateo : Actividad.java
   
 + Guardar el identificador y la duración de cada actividad.
   
@@ -11,7 +11,7 @@
 
 ----------------------------------------------------------
 
-Integrante 2: CalculoCPM.java
+Integrante 2 Dani : CalculoCPM.java
 
 + Calcular los tiempos tempranos y tardíos.
   
@@ -23,7 +23,7 @@ Integrante 2: CalculoCPM.java
 
 ----------------------------------------------------------
 
-Integrante 3: Main.java
+Integrante 3 Chuy : Main.java
 
 + Solicitar los datos de las actividades.
   
