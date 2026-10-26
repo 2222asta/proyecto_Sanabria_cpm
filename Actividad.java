@@ -7,4 +7,10 @@ public class Actividad {
     private int duracion; // Agregar duración de actividad.
     private List<String> predecesoras; // Agregar lista de predecesoras.
 
+     private int inicioTemprano; // Agregar inicio temprano.
+    private int finTemprano; // Agregar fin temprano.
+    private int inicioTardio; // Agregar inicio tardío.
+    private int finTardio; // Agregar fin tardío.
+    private int holgura; // Agregar holgura de actividad.
+    
 }
