@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class CalculoCPM {
@@ -27,5 +28,24 @@ public class CalculoCPM {
                     );
                 }
             }
+        }
 
+        // Ordenar actividades según sus dependencias
+        List<Actividad> orden = new ArrayList<>();
+        Set<String> procesadas = new HashSet<>();
+
+        while (orden.size() < actividades.size()) {
+            boolean progreso = false;
+
+            for (Actividad a : actividades) {
+                if (procesadas.contains(a.id)) {
+                    continue;
+                }
+
+                if (procesadas.containsAll(a.predecesoras)) {
+                    orden.add(a);
+                    procesadas.add(a.id);
+                    progreso = true;
+                }
+            }
 }   }   }
