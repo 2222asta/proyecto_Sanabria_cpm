@@ -59,6 +59,23 @@ public class CalculoCPM {
                 cola.add(a);
             }
         }
+
+         // Ordenamiento
+        while (!cola.isEmpty()) {
+
+            Actividad actual = cola.poll();
+            orden.add(actual);
+
+            for (Actividad siguiente : sucesoras.get(actual.id)) {
+
+                int pendientes = entradas.get(siguiente.id) - 1;
+                entradas.put(siguiente.id, pendientes);
+
+                if (pendientes == 0) {
+                    cola.add(siguiente);
+                }
+            }
+        }
 }   }   } 
 } 
   
