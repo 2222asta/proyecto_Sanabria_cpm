@@ -2,50 +2,43 @@
 import java.util.*;
 
 public class CalculoCPM {
-    private List<Actividad> actividades;
+
+    private final List<Actividad> actividades;
+    private final Map<String, Actividad> mapa = new HashMap<>();
+    private final Map<String, List<Actividad>> sucesoras = new HashMap<>();
+
+    private List<Actividad> orden;
+    private int duracionTotal;
 
     public CalculoCPM(List<Actividad> actividades) {
         this.actividades = actividades;
     }
 
-    public void resolver() {
-        Map<String, Actividad> mapa = new HashMap<>();
+    // Organiza las actividades y valida sus dependencias
+    private void ordenarActividades() {
 
+        mapa.clear();
+        sucesoras.clear();
+
+        Map<String, Integer> entradas = new HashMap<>();
+        Queue<Actividad> cola = new LinkedList<>();
+        orden = new ArrayList<>();
+
+        // Registrar actividades
         for (Actividad a : actividades) {
-            if (a.duracion < 0 || mapa.put(a.id, a) != null) {
+
+            if (a.duracion < 0) {
                 throw new IllegalArgumentException(
-                    "Duración inválida o ID repetido: " + a.id
+                    "Duración negativa en: " + a.id
                 );
             }
-        }
 
-        // Validar las predecesoras
-        for (Actividad a : actividades) {
-            for (String p : a.predecesoras) {
-                if (!mapa.containsKey(p)) {
-                    throw new IllegalArgumentException(
-                        "No existe la actividad predecesora: " + p
-                    );
-                }
+            if (mapa.put(a.id, a) != null) {
+                throw new IllegalArgumentException(
+                    "ID duplicado: " + a.id
+                );
             }
-        }
 
-        // Ordenar actividades según sus dependencias
-        List<Actividad> orden = new ArrayList<>();
-        Set<String> procesadas = new HashSet<>();
-
-        while (orden.size() < actividades.size()) {
-            boolean progreso = false;
-
-            for (Actividad a : actividades) {
-                if (procesadas.contains(a.id)) {
-                    continue;
-                }
-
-                if (procesadas.containsAll(a.predecesoras)) {
-                    orden.add(a);
-                    procesadas.add(a.id);
-                    progreso = true;
-                }
-            }
-}   }   }
+            sucesoras.put(a.id, new ArrayList<>());
+            entradas.put(a.id, 0);
+       
