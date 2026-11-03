@@ -41,4 +41,18 @@ public class CalculoCPM {
 
             sucesoras.put(a.id, new ArrayList<>());
             entradas.put(a.id, 0);
-       
+            
+        // Construir relaciones entre actividades
+        for (Actividad a : actividades) {
+
+            Set<String> dependencias = new HashSet<>(a.predecesoras);
+
+            if (dependencias.size() != a.predecesoras.size()) {
+                throw new IllegalArgumentException(
+                    "Predecesora repetida en: " + a.id
+                );
+            }
+}   }   } 
+} 
+  
+
