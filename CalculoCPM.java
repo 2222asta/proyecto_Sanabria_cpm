@@ -76,7 +76,17 @@ public class CalculoCPM {
                 }
             }
         }
+
+        // Detectar ciclos
+        if (orden.size() != actividades.size()) {
+            throw new IllegalArgumentException(
+                "Error: existen ciclos en las dependencias."
+            );
+        }
+    }
+
+    
 }   }   } 
-} 
+
   
 
