@@ -41,7 +41,7 @@ public class CalculoCPM {
 
             sucesoras.put(a.id, new ArrayList<>());
             entradas.put(a.id, 0);
-            
+
         // Construir relaciones entre actividades
         for (Actividad a : actividades) {
 
@@ -52,6 +52,13 @@ public class CalculoCPM {
                     "Predecesora repetida en: " + a.id
                 );
             }
+
+              // Agregar a la cola las actividades sin predecesoras
+        for (Actividad a : actividades) {
+            if (entradas.get(a.id) == 0) {
+                cola.add(a);
+            }
+        }
 }   }   } 
 } 
   
