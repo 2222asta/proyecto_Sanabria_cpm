@@ -105,7 +105,18 @@ public class CalculoCPM {
         }
     }
           
-    
+    // 2. Calcular duración total del proyecto
+    public void calcularDuracionTotal() {
+
+        duracionTotal = 0;
+
+        for (Actividad a : orden) {
+            duracionTotal = Math.max(
+                duracionTotal, a.finTemprano
+            );
+        }
+    }
+
 }   }  } 
 
 
