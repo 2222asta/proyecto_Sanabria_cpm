@@ -85,8 +85,29 @@ public class CalculoCPM {
         }
     }
 
+      // 1. Calcular tiempos tempranos
+    public void CalcularTiemposTempranos() {
+
+        for (Actividad a : orden) {
+
+            int inicio = 0;
+
+            for (String id : a.predecesoras) {
+                Actividad anterior = mapa.get(id);
+
+                inicio = Math.max(
+                    inicio, anterior.finTemprano
+                );
+            }
+
+            a.inicioTemprano = inicio;
+            a.finTemprano = inicio + a.duracion;
+        }
+    }
+          
     
-}   }   } 
+}   }  } 
+
 
   
 
