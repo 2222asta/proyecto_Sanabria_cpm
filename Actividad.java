@@ -72,4 +72,12 @@ public int getFinTardio() { //getter Fin Tardio
 public void setFinTardio(int finTardio) { //setter Fin Tardio 
         this.finTardio = finTardio;
     }    
+
+public int getHolgura() { //getter holgura 
+        return holgura;
+    }    
+
+public void setHolgura(int holgura) { //setter holgura 
+        this.holgura = holgura;
+    }    
 }
