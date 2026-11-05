@@ -12,6 +12,7 @@ public class Actividad {
     private int inicioTardio; // Agregar inicio tardío.
     private int finTardio; // Agregar fin tardío.
     private int holgura; // Agregar holgura de actividad.
+    private int duracionTotal; // Agregar duración total del proyecto.
 
      public Actividad(String id, int duracion, List<String> predecesoras) {
         this.id = id;
@@ -86,4 +87,11 @@ public void setHolgura(int holgura) { //setter holgura
         return holgura == 0;    
 }
 
+public int getDuracionTotal() { //getter Duracion Total 
+        return duracionTotal;
+    }
+
+public void setDuracionTotal(int duracionTotal) { //setter Duracion Total 
+        this.duracionTotal = duracionTotal;
+    }
 }
