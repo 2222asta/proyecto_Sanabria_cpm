@@ -39,4 +39,7 @@ public List<String> getPredecesoras() { //getter Predecesoras
         return predecesoras;   
 }
 
+public int getInicioTemprano() { //getter Inicio Temprano 
+        return inicioTemprano;
+    }
 }
