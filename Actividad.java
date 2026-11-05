@@ -39,11 +39,23 @@ public List<String> getPredecesoras() { //getter Predecesoras
         return predecesoras;   
 }
 
+
+
 public int getInicioTemprano() { //getter Inicio Temprano 
         return inicioTemprano;
     }
 
 public void setInicioTemprano(int inicioTemprano) { //setter Inicio Temprano 
         this.inicioTemprano = inicioTemprano;
+    }
+    
+public int getFinTemprano() { //getter Fin Temprano 
+        return finTemprano;
+    }
+    
+public void setFinTemprano(int finTemprano) { //setter Fin Temprano 
+        this.finTemprano = finTemprano;
     }    
+
+    
 }
