@@ -80,4 +80,10 @@ public int getHolgura() { //getter holgura
 public void setHolgura(int holgura) { //setter holgura 
         this.holgura = holgura;
     }    
+
+ // Determinar si la actividad es critica
+    public boolean esCritica() {
+        return holgura == 0;    
+}
+
 }
