@@ -42,4 +42,8 @@ public List<String> getPredecesoras() { //getter Predecesoras
 public int getInicioTemprano() { //getter Inicio Temprano 
         return inicioTemprano;
     }
+
+public void setInicioTemprano(int inicioTemprano) { //setter Inicio Temprano 
+        this.inicioTemprano = inicioTemprano;
+    }    
 }
