@@ -23,5 +23,9 @@ public class Actividad {
         this.inicioTardio = 0;
         this.finTardio = 0;
         this.holgura = 0;
+
+        public String getId() {
+            return id;
      }
+      
 }
