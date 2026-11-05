@@ -57,5 +57,11 @@ public void setFinTemprano(int finTemprano) { //setter Fin Temprano
         this.finTemprano = finTemprano;
     }    
 
-    
+public int getInicioTardio() { //getter Inicio Tardio 
+        return inicioTardio;
+    }
+
+public void setInicioTardio(int inicioTardio) { //setter Inicio Tardio 
+        this.inicioTardio = inicioTardio;
+    }
 }
