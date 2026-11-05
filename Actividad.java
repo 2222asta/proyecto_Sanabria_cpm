@@ -64,4 +64,12 @@ public int getInicioTardio() { //getter Inicio Tardio
 public void setInicioTardio(int inicioTardio) { //setter Inicio Tardio 
         this.inicioTardio = inicioTardio;
     }
+
+public int getFinTardio() { //getter Fin Tardio 
+        return finTardio;
+    }    
+
+public void setFinTardio(int finTardio) { //setter Fin Tardio 
+        this.finTardio = finTardio;
+    }    
 }
