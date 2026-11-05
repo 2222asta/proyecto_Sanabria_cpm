@@ -33,6 +33,10 @@ public class Actividad {
       
 public int getDuracion() { //getter Duracion 
    return duracion;
+      }
 
+public List<String> getPredecesoras() { //getter Predecesoras 
+        return predecesoras;   
 }
+
 }
