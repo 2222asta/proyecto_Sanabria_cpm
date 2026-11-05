@@ -24,8 +24,15 @@ public class Actividad {
         this.finTardio = 0;
         this.holgura = 0;
 
-        public String getId() {
+       
+}
+
+ public String getId() { //getter id 
             return id;
      }
       
+public int getDuracion() { //getter Duracion 
+   return duracion;
+
+}
 }
