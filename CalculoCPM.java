@@ -14,5 +14,34 @@ public class CalculoCPM {
         this.orden = new ArrayList<>();
         this.rutaCritica = new ArrayList<>();
     }
+
     
+    // Aqui realizamos todos los calculos del CPM
+    public void calcularCPM() {
+
+        // Guardamos las actividades 
+        Map<String, Actividad> mapa = new HashMap<>();
+
+        // guardamos que actividades dependenden de otras
+        Map<String, List<Actividad>> sucesoras = new HashMap<>();
+
+        // Contamos cuantas actividades anteriores tiene cada una
+        Map<String, Integer> entradas = new HashMap<>();
+
+        Queue<Actividad> cola = new LinkedList<>();
+
+        // Registramos las actividades y revisamos los datos
+        for (Actividad a : actividades) {
+            if (a.getDuracion() < 0 ||
+                mapa.put(a.getId(), a) != null) {
+
+                throw new IllegalArgumentException(
+                    "Duracion invalida o ID duplicado: " + a.getId());
+            }
+
+            sucesoras.put(a.getId(), new ArrayList<>());
+            entradas.put(a.getId(), 0);
+        }
+   }
+      
  }
