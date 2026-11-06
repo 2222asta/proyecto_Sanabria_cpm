@@ -42,6 +42,28 @@ public class CalculoCPM {
             sucesoras.put(a.getId(), new ArrayList<>());
             entradas.put(a.getId(), 0);
         }
-   }
-      
- }
+   
+        // Revisamos las dependencias
+        for (Actividad a : actividades) {
+            for (String id : a.getPredecesoras()) {
+
+                Actividad anterior = mapa.get(id);
+
+                // Comprobamos que la actividad anterior exista
+                if (anterior == null) {
+                    throw new IllegalArgumentException(
+                        "Predecesora inexistente: " + id);
+                }
+
+                sucesoras.get(id).add(a);
+
+                entradas.put(a.getId(),
+                    entradas.get(a.getId()) + 1);
+            }
+        }
+    }
+     
+}
+
+    
+ 
