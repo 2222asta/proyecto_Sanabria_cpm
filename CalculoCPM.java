@@ -85,7 +85,7 @@ public class CalculoCPM {
         }
     }
 
-      // 1. Calcular tiempos tempranos
+      // Calcular tiempos tempranos
     public void CalcularTiemposTempranos() {
 
         for (Actividad a : orden) {
@@ -105,7 +105,7 @@ public class CalculoCPM {
         }
     }
           
-    // 2. Calcular duración total del proyecto
+    //Calcular duración total del proyecto
     public void calcularDuracionTotal() {
 
         duracionTotal = 0;
@@ -116,6 +116,16 @@ public class CalculoCPM {
             );
         }
     }
+    +
+    // Calcular holguras
+    public void calcularHolguras() {
+
+        for (Actividad a : orden) {
+
+            a.holgura = a.inicioTardio - a.inicioTemprano;
+        }
+    }
+
 
 }   }  } 
 
